@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Inventories\" />
+    <None Remove="PluginInterfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Inventories\" />
+    <Folder Include="PluginInterfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IMS.CoreBusiness\IMS.CoreBusiness.csproj" />
+  </ItemGroup>
+</Project>
