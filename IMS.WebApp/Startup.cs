@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using IMS.WebApp.Data;
+using IMS.UseCases.PluginInterfaces;
+using IMS.Plugins.InMemory;
+using IMS.UseCases.Inventories;
 
 namespace IMS.WebApp
 {
@@ -28,6 +31,10 @@ namespace IMS.WebApp
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            //Dependency Injection
+            services.AddSingleton<IInventoryRepository, InventoryRepository>();
+            services.AddTransient<IViewInventoriesUseCase, ViewInventoriesUseCase>(); 
             services.AddSingleton<WeatherForecastService>();
         }
 

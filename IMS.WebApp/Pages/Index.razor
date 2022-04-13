@@ -1,4 +1,27 @@
 ﻿@page "/"
+@using UseCases.Inventories
+@using IMS.CoreBusiness
+
+
+@inject IViewInventoriesUseCase ViewInventoriesUseCase
+<br />
+<ul>
+    @foreach (var inv  in _inventories)
+    {
+        <li>
+            @inv.InventoryName
+        </li>
+    }
+</ul>
+
+@code {
+        private List<Inventory> _inventories = new List<Inventory>();
+
+        protected override async Task OnInitializedAsync()
+        {
+            _inventories = (await ViewInventoriesUseCase.ExecuteAsync()).ToList();
+        }
+}
 
 <h1>Hello, world!</h1>
 
