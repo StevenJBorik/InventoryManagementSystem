@@ -15,4 +15,12 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\Inventories\" />
+    <None Remove="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Inventories\" />
+    <Folder Include="Controls\" />
+  </ItemGroup>
 </Project>
