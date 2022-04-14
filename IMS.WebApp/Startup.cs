@@ -34,8 +34,10 @@ namespace IMS.WebApp
 
             //Dependency Injection
             services.AddSingleton<IInventoryRepository, InventoryRepository>();
-            services.AddTransient<IViewInventoriesUseCase, ViewInventoriesUseCase>(); 
+            services.AddTransient<IViewInventoriesUseCase, ViewInventoriesUseCase>();
+            services.AddTransient<IAddInventoriesUseCase, AddInventoriesUseCase>();
             services.AddSingleton<WeatherForecastService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
